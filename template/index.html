@@ -1,0 +1,52 @@
+<DOCTYPE html
+html long = en
+
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width-device-width", initial-scale-1.0>
+    <title>Car Price Prediction</title>
+</head>
+
+<body>
+    <div style="color:black">
+        <form> action = "{{url_for('predict')}}" method = "post">
+            <h2>Predict Car Sale Price</h2>
+            
+            <h3>Year</h3>
+            <input id = "first" name = "Year" type = "number">
+
+            <h3>What is the showroom price?</h3>
+            <input id = "second" name = "Present Price" required = "required">
+
+            <h3>How many Kilometers Driven</h3>
+            <input id = "third" name = "Kms Driven" required = "required">
+
+            <h3>How Many Previous Owner(s) (1,2, or 3)</h3>
+            <input id = 'fourth' name = "Owner" required = "required">
+
+            <h3>What is the Fuel Type</h3>
+            <select id="fuel" name="Fuel_Type_Petrol" >
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="CNG">CNG</option>
+            </select>
+
+            <h3>Are you a Dealer or Individual</h3>
+            <select id="resea" name="Seller_Type_Individual" required = "required">
+                <option value="Dealer">Dealer</option>
+                <option value="Individual">Individual</option>
+            </select>
+
+            <h3>Transmission Type</h3>
+            <select id="research" name="Transmission_Mannual" required = "required">
+                <option value="Mannual">Mannual</option>
+                <option value="Automatic">Automatic</option>
+            </select>
+
+            <br><br><button id="sub" type="submit">Calculate the Selling Price</button>
+            <br>
+        </form>
+        <h3>{{Prediction_text}}</h3>
+    </div>
+</body>
+</html>
